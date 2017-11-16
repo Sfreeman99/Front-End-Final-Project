@@ -1,3 +1,7 @@
 .thumbnail {
-    height: -webkit-fill-available;
+    height: 500px;
+}
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
