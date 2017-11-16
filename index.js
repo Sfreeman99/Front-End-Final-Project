@@ -12,7 +12,6 @@ function getInventory(data) {
 }
 
 function main() {
-    console.log(getInventory(Phone_Data));
     $('#phones').html(getInventory(Phone_Data));
 }
 
