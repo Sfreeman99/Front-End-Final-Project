@@ -11,7 +11,7 @@ function getInventory(data) {
                     ' ' +
                     phone.details.ProductName +
                     '</h3>',
-                '<p class="well">' + phone.details.description + '</p>',
+                '<p>' + phone.details.description + '</p>',
                 "<div class='row'>",
                 "<div class='col-lg-6 col-sm-6'>",
                 Quantity(phone.details.quantity),
@@ -20,9 +20,7 @@ function getInventory(data) {
                 SellerInformation(phone.details.Seller),
                 '</div>',
                 '</div>',
-                "<p><a href='#' class='btn btn-primary' role='button'>$" +
-                    phone.details.Price +
-                    "&nbsp;<i class='fa fa-cart-plus' aria-hidden'true'></i></a></p>",
+                addToCart(phone.details.Price),
                 '</div>',
                 '</div>',
                 '</div>'
@@ -32,7 +30,7 @@ function getInventory(data) {
 }
 function Quantity(quantity) {
     return (
-        "<p class='quantity-border'>Quantity: <span class='quantity'>" +
+        "<p class='quantity-border'>Qty: <span class='quantity'>" +
         quantity +
         '</span></p>'
     );
@@ -40,7 +38,13 @@ function Quantity(quantity) {
 function SellerInformation(seller) {
     return '<p>Seller: ' + seller + '</p>';
 }
-
+function addToCart(price) {
+    return (
+        "<p><a href='#' class='btn btn-primary' role='button'>$" +
+        price +
+        "&nbsp;<i class='fa fa-cart-plus' aria-hidden'true'></i></a></p>"
+    );
+}
 function main() {
     $('#phones').html(
         "<div class='container'>" + getInventory(Phone_Data) + '</div>'
