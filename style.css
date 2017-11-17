@@ -12,7 +12,7 @@ body {
 }
 span.quantity {
     border: 1px black solid;
-    padding: 5px;
+    padding: 6px;
     background-color: white;
     border-color: whitesmoke;
 }
