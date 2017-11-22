@@ -1,3 +1,4 @@
+var id = 0;
 var Phone_Data = [
     {
         manufacturer: 'Apple',
@@ -104,4 +105,4 @@ var Phone_Data = [
         }
     }
 ];
-// Dont let the description be longer than 200 characters
+var Cart = [];
