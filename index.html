@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Freeman's Connection</title>
     <link rel="stylesheet" href="vendor/bootstrap-3.3.7-dist/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href='Front-End-ColorScheme.css'>
@@ -29,14 +29,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="#">Home
+                        <a href="#" id='home'>Home
                             <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id='sell'>Sell
+                            <span class='sr-only'></span>
                         </a>
                     </li>
                 </ul>
                 <ul class='nav navbar-nav navbar-right'>
                     <li>
-                        <a href='#cart'>
+                        <a href='#cart' id='cart'>
                             <i class="fa fa-shopping-cart fa-lg" aria-hidden="true">
                                 <span class="badge"></span>
                             </i>
@@ -45,11 +50,14 @@
                 </ul>
             </div>
     </nav>
-    <div id='phones'></div>
+    <div id='root'></div>
     <script src="vendor/jquery.js"></script>
     <script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="Data.js"></script>
+    <script src='Cart.js'></script>
+    <script src="Sell_Item.js"></script>
     <script src="index.js"></script>
+
 </body>
 
 </html>

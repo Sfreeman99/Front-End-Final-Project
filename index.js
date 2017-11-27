@@ -53,14 +53,48 @@ function CartButton(price, idNumber) {
 function CartNumber() {
     return $('.badge').html(Cart.length);
 }
-function main() {
-    console.log(Phone_Data[0]);
-    $('#phones').html(
+function home() {
+    $('#root').html(
         "<div class='container'>" + getInventory(Phone_Data) + '</div>'
     );
-    $('a').on('click', function(event) {
+
+    $('p > a').on('click', function(event) {
+        event.preventDefault();
         Cart.push(Phone_Data[event.target.id]);
         CartNumber();
+    });
+    $('#cart').click(function() {
+        $('#root').html(CartView());
+        console.log(tax(Cart));
+    });
+}
+
+function main() {
+    $('#root').html(
+        "<div class='container'>" + getInventory(Phone_Data) + '</div>'
+    );
+
+    $('p > a').on('click', function(event) {
+        event.preventDefault();
+        Cart.push(Phone_Data[event.target.id]);
+        CartNumber();
+    });
+    $('#cart').click(function() {
+        $('#root').html(CartView());
+        $('.btn.btn-danger').click(function(event) {
+            var num = event.target.id;
+            console.log(num);
+            Cart.splice(num, 1);
+            CartNumber();
+            $('#root').html(CartView());
+        });
+    });
+    $('#sell').click(function() {
+        $('#root').html("<div class='container'>" + sellItem() + '</div>');
+    });
+
+    $('#home').click(function() {
+        home();
     });
 }
 $(main);
