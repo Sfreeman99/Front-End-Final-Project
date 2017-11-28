@@ -4,7 +4,7 @@ function CheckoutInformation(data) {
             return [
                 "<div class='container col-lg-12 well'>",
                 "<div class='col-lg-4'>",
-                "<img class='cart-pic' src='" +
+                "<img class='cart-pic img-responsive' src='" +
                     checkout.details.Picture +
                     "' />",
                 '</div>',
