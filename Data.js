@@ -6,7 +6,7 @@ var Phone_Data = [
             ProductName: 'Iphone X',
             Price: 999.99,
             description:
-                "Phone X. You've never seen anything like it. It's never seen anything like you.",
+                "IPhone X. You've never seen anything like it. It's never seen anything like you.",
             Picture:
                 'https://drop.ndtv.com/TECH/product_database/images/913201720152AM_635_iphone_x.jpeg',
             Seller: 'Boe',
@@ -19,7 +19,7 @@ var Phone_Data = [
             ProductName: 'Iphone 7',
             Price: 499.99,
             description:
-                "Phone 7. You've never seen anything like it. It's never seen anything like you.",
+                "IPhone 7. You've never seen anything like it. It's never seen anything like you.",
             Picture:
                 'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/silver/iphone7-silver-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430219571',
             Seller: 'Billy',
@@ -32,7 +32,7 @@ var Phone_Data = [
             ProductName: 'Iphone 7 Plus',
             Price: 549.99,
             description:
-                "Phone 7 Plus. You've never seen anything like it. It's never seen anything like you.",
+                "IPhone 7 Plus. You've never seen anything like it. It's never seen anything like you.",
             Picture:
                 'https://www.kickmobiles.com/content/images/thumbs/0007112_apple-iphone-7-plus-128gb-rose-gold.jpeg',
             Seller: 'Billy',
@@ -58,7 +58,7 @@ var Phone_Data = [
             ProductName: 'iPad (9.7-inch)',
             Price: 429.99,
             description:
-                'iPad helps you learn, play, surf, and create with a gorgeous 9.7-inch Retina display,1 powerful A9 chip, 8MP camera, FaceTime HD camera, Touch ID, and all-day battery life.2 All in a durable aluminum design that weighs just a pound.',
+                'IPad helps you learn, play, surf, and create with a gorgeous 9.7-inch Retina display,1 powerful A9 chip, 8MP camera, FaceTime HD camera, Touch ID, and all-day battery life.2 All in a durable aluminum design that weighs just a pound.',
             Picture:
                 'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/r/fb/rfb/97/rfb-97-ipad-pro-silver-wifi-2015?wid=1000&hei=1000&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1478124718967',
             Seller: 'Larry',

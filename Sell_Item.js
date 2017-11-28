@@ -25,14 +25,15 @@ function sellItem() {
         "<input type='text' class='form-control' id='Price' placeholder='Price to be sold for'>",
         '</div>',
         '</div>',
-        "<button id='submit' type='submit' class='btn btn-default'>Submit</button>",
+        "<button id='submitItem' type='submit' class='btn btn-default'>Sell</button>",
         '</form>',
         '</div>'
     ].join('');
 }
 function sellItemMain() {
     $('#root').html(sellItem());
-    $('#submit').click(function() {
+    $('#submitItem').click(function(event) {
+        event.preventDefault();
         var name = $('#First-Name').val();
         var manufacturer = $('#Manufacturer').val();
         var productName = $('#Product-Name').val();
@@ -50,6 +51,6 @@ function sellItemMain() {
                 quantity: 1
             }
         });
-        home();
+        main();
     });
 }

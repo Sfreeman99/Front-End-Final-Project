@@ -53,34 +53,36 @@ function CartButton(price, idNumber) {
 function CartNumber() {
     return $('.badge').html(Cart.length);
 }
-function home() {
-    $('#root').html(
-        "<div class='container'>" + getInventory(Phone_Data) + '</div>'
-    );
+// function home() {
+//     $('#root').html(
+//         "<div class='container'>" + getInventory(Phone_Data) + '</div>'
+//     );
 
-    $('p > a').on('click', function(event) {
-        event.preventDefault();
-        Cart.push(Phone_Data[event.target.id]);
-        CartNumber();
-    });
-    $('#cart').click(function() {
-        $('#root').html(CartView());
-        $('.btn.btn-danger').click(function(event) {
-            var num = event.target.id;
-            console.log(num);
-            Cart.splice(num, 1);
-            CartNumber();
-            $('#root').html(CartView());
-        });
-    });
-    $('#sell').click(function() {
-        $('#root').html("<div class='container'>" + sellItem() + '</div>');
-    });
+//     $('p > a').on('click', function(event) {
+//         event.preventDefault();
+//         Cart.push(Phone_Data[event.target.id]);
+//         console.log(Phone_Data[event.target.id].details.quantity);
+//         CartNumber();
+//         home();
+//     });
+//     $('#cart').click(function() {
+//         $('#root').html(CartView());
+//         $('.btn.btn-danger').click(function(event) {
+//             var num = event.target.id;
+//             console.log(num);
+//             Cart.splice(num, 1);
+//             CartNumber();
+//             $('#root').html(CartView());
+//         });
+//     });
+//     $('#sell').click(function() {
+//         $('#root').html("<div class='container'>" + sellItem() + '</div>');
+//     });
 
-    $('#home').click(function() {
-        home();
-    });
-}
+//     $('#home').click(function() {
+//         home();
+//     });
+// }
 
 function main() {
     $('#root').html(
@@ -89,8 +91,10 @@ function main() {
 
     $('p > a').on('click', function(event) {
         event.preventDefault();
+        Phone_Data[event.target.id].details.quantity -= 1;
         Cart.push(Phone_Data[event.target.id]);
         CartNumber();
+        main();
     });
     $('#cart').click(function() {
         CartMain();
@@ -101,7 +105,8 @@ function main() {
     });
 
     $('#home').click(function() {
-        home();
+        // home();
+        main();
     });
 }
 $(main);

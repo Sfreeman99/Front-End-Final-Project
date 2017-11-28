@@ -72,6 +72,6 @@ function CartMain() {
         console.log(num);
         Cart.splice(num, 1);
         CartNumber();
-        $('#root').html(CartView());
+        CartMain();
     });
 }
