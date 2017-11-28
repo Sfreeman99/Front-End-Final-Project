@@ -65,7 +65,20 @@ function home() {
     });
     $('#cart').click(function() {
         $('#root').html(CartView());
-        console.log(tax(Cart));
+        $('.btn.btn-danger').click(function(event) {
+            var num = event.target.id;
+            console.log(num);
+            Cart.splice(num, 1);
+            CartNumber();
+            $('#root').html(CartView());
+        });
+    });
+    $('#sell').click(function() {
+        $('#root').html("<div class='container'>" + sellItem() + '</div>');
+    });
+
+    $('#home').click(function() {
+        home();
     });
 }
 
@@ -90,7 +103,8 @@ function main() {
         });
     });
     $('#sell').click(function() {
-        $('#root').html("<div class='container'>" + sellItem() + '</div>');
+        // $('#root').html("<div class='container'>" + sellItem() + '</div>');
+        sellItemMain();
     });
 
     $('#home').click(function() {
