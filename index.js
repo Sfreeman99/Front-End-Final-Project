@@ -20,7 +20,7 @@ function getInventory(data) {
                 SellerInformation(phone.details.Seller, int),
                 '</div>',
                 '</div>',
-                CartButton(phone.details.Price, int),
+                CartButton(phone.details.Price, int, phone.details.quantity),
                 '</div>',
                 '</div>',
                 '</div>'
@@ -41,48 +41,26 @@ function Quantity(quantity, ClassNumber) {
 function SellerInformation(seller, ClassNumber) {
     return '<p class="' + ClassNumber + '">Seller: ' + seller + '</p>';
 }
-function CartButton(price, idNumber) {
-    return (
-        "<p><a href='#' id='" +
-        idNumber +
-        "' class='btn btn-primary' role='button'>$" +
-        price +
-        "&nbsp;<i class='fa fa-cart-plus' aria-hidden'true'></i></a></p>"
-    );
+function CartButton(price, idNumber, quantity) {
+    if (quantity === 0) {
+        return (
+            "<p><a href='#' id='" +
+            idNumber +
+            "' class='btn btn-danger' role='button' disabled='disabled'>Sold Out<i class='fa fa-cart-plus' aria-hidden'true'></i></a></p>"
+        );
+    } else {
+        return (
+            "<p><a href='#' id='" +
+            idNumber +
+            "' class='btn btn-primary' role='button'>$" +
+            price +
+            "&nbsp;<i class='fa fa-cart-plus' aria-hidden'true'></i></a></p>"
+        );
+    }
 }
 function CartNumber() {
     return $('.badge').html(Cart.length);
 }
-// function home() {
-//     $('#root').html(
-//         "<div class='container'>" + getInventory(Phone_Data) + '</div>'
-//     );
-
-//     $('p > a').on('click', function(event) {
-//         event.preventDefault();
-//         Cart.push(Phone_Data[event.target.id]);
-//         console.log(Phone_Data[event.target.id].details.quantity);
-//         CartNumber();
-//         home();
-//     });
-//     $('#cart').click(function() {
-//         $('#root').html(CartView());
-//         $('.btn.btn-danger').click(function(event) {
-//             var num = event.target.id;
-//             console.log(num);
-//             Cart.splice(num, 1);
-//             CartNumber();
-//             $('#root').html(CartView());
-//         });
-//     });
-//     $('#sell').click(function() {
-//         $('#root').html("<div class='container'>" + sellItem() + '</div>');
-//     });
-
-//     $('#home').click(function() {
-//         home();
-//     });
-// }
 
 function main() {
     $('#root').html(
@@ -100,12 +78,10 @@ function main() {
         CartMain();
     });
     $('#sell').click(function() {
-        // $('#root').html("<div class='container'>" + sellItem() + '</div>');
         sellItemMain();
     });
 
     $('#home').click(function() {
-        // home();
         main();
     });
 }

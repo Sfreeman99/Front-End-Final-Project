@@ -1,4 +1,3 @@
-var id = 0;
 var Phone_Data = [
     {
         manufacturer: 'Apple',
