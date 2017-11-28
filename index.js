@@ -93,14 +93,7 @@ function main() {
         CartNumber();
     });
     $('#cart').click(function() {
-        $('#root').html(CartView());
-        $('.btn.btn-danger').click(function(event) {
-            var num = event.target.id;
-            console.log(num);
-            Cart.splice(num, 1);
-            CartNumber();
-            $('#root').html(CartView());
-        });
+        CartMain();
     });
     $('#sell').click(function() {
         // $('#root').html("<div class='container'>" + sellItem() + '</div>');

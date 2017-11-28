@@ -65,10 +65,13 @@ function CartView() {
         "<div class='container well'>" + CheckoutTotal(Cart) + '</div>'
     ].join('');
 }
-$('.btn.btn-danger').click(function(event) {
-    var num = event.target.id;
-    console.log(num);
-    Cart.splice(num, 1);
-    CartNumber();
+function CartMain() {
     $('#root').html(CartView());
-});
+    $('.btn.btn-danger').click(function(event) {
+        var num = event.target.id;
+        console.log(num);
+        Cart.splice(num, 1);
+        CartNumber();
+        $('#root').html(CartView());
+    });
+}
