@@ -68,8 +68,13 @@ function CartView() {
 function CartMain() {
     $('#root').html(CartView());
     $('.btn.btn-danger').click(function(event) {
-        var num = event.target.id;
-        console.log(num);
+        var num = event.currentTarget.id;
+        for (var i = 0; i < Phone_Data.length; i++) {
+            if (Cart[num].id === Phone_Data[i].id) {
+                Phone_Data[i].details.quantity += 1;
+                break;
+            }
+        }
         Cart.splice(num, 1);
         CartNumber();
         CartMain();
