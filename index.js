@@ -52,7 +52,7 @@ function CartButton(price, idNumber, quantity) {
         return (
             "<p><a href='#' id='" +
             idNumber +
-            "' class='btn btn-primary' role='button'>$" +
+            "' class='btn btn-primary addToCartButton' role='button'>$" +
             price +
             "&nbsp;<i class='fa fa-cart-plus' aria-hidden'true'></i></a></p>"
         );
@@ -67,10 +67,10 @@ function main() {
         "<div class='container'>" + getInventory(Phone_Data) + '</div>'
     );
 
-    $('p > a').on('click', function(event) {
+    $('.addToCartButton').on('click', function(event) {
         event.preventDefault();
-        Phone_Data[event.target.id].details.quantity -= 1;
-        Cart.push(Phone_Data[event.target.id]);
+        Phone_Data[event.currentTarget.id].details.quantity -= 1;
+        Cart.push(Phone_Data[event.currentTarget.id]);
         CartNumber();
         main();
     });
