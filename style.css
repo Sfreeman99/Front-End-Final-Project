@@ -1,5 +1,4 @@
 .thumbnail {
-    /* height: 500px; */
     background-color: whitesmoke;
 }
 body {
@@ -16,16 +15,13 @@ span.quantity {
     background-color: white;
     border-color: whitesmoke;
 }
-/* p.quantity-border {
-    padding-left: 14px;
-} */
+
 p.well {
     background-color: white;
     padding: inherit;
 }
 .cart-pic {
     height: 300px;
-    /* width: 150px; */
 }
 #title {
     font-size: 40px;
