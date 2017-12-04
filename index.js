@@ -59,7 +59,11 @@ function CartButton(price, idNumber, quantity) {
     }
 }
 function CartNumber() {
-    return $('.badge').html(Cart.length);
+    if (Cart.length === 0) {
+        return $('.badge').html('');
+    } else {
+        return $('.badge').html(Cart.length);
+    }
 }
 
 function main() {
